@@ -24,7 +24,7 @@ local KingdomGui = CollectionService:GetTagged("KingdomGui") -- gets all things 
 -- | Runtime
 
 for i, v in Kingdoms do -- does whatever for each instance in the table of kingdoms
-	v:GetAttributeChangedSignal("Claimed"):Connect(function()  -- checks whenever the attribute, "Claimed" is changed (claimed is just )
+	v:GetAttributeChangedSignal("Claimed"):Connect(function()  -- checks whenever the attribute, "Claimed" is changed (claimed is just if the team has an owner or not)
 		Events.Claimed:FireServer(PlayerGui, v, v:GetAttribute("Claimed")) -- fires a remote event, passes (automatically passes through the player), playergui, the instance, which in this case would be the team, and if the attribute was changed to true or false
 	end)
 end
