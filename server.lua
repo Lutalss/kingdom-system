@@ -56,9 +56,9 @@ Events.Kingdom.OnServerEvent:Connect(function(Player : Player, Kingdom : Folder)
 	
 	local Previous = PreviousKingdom[UserId] -- gets the players kingdom that they were in before they swapped kingdoms
 	
-	--[[if Debounce[UserId] then -- looks for the debounce on the player 
+	if Debounce[UserId] then -- looks for the debounce on the player 
 		return -- returns if found
-	end]]
+	end
 	
 	task.spawn(function() -- runs a function in a different thread (basically means that it wont stop other things from running, if i didnt have this, then all the statements below wouldnt run until the task.wait ended)
 		Debounce[UserId] = true -- looks for the player in the debounces and sets their value to true
